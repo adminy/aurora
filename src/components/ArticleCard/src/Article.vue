@@ -70,12 +70,7 @@
             />
             <span class="text-ob-dim">
               <strong
-                class="
-                  text-ob-normal
-                  pr-1.5
-                  hover:text-ob hover:opacity-50
-                  cursor-pointer
-                "
+                class="text-ob-normal pr-1.5 hover:text-ob hover:opacity-50 cursor-pointer"
                 @click="handleAuthorClick(post.author.link)"
               >
                 {{ post.author.name }}

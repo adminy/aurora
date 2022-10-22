@@ -17,7 +17,7 @@ router.beforeEach(async (to, from, next) => {
   metaStore.setTitle(String(title))
 
   // use beforeEach route guard to set the languages
-  i18n.global.locale = appStore.locale ? appStore.locale : 'en'
+  // i18n.global.locale = appStore.locale ? appStore.locale : 'en'
 
   next()
 })

@@ -3,6 +3,7 @@
     <div class="post-header">
       <h1 v-if="post.title" class="post-title text-white uppercase">
         {{ pageTitle }}
+        <!-- {{ editLink }} -->
       </h1>
       <ob-skeleton
         v-else
@@ -21,15 +22,7 @@
         />
         <div
           v-else
-          class="
-            bg-ob-deep-800
-            px-14
-            py-16
-            rounded-2xl
-            shadow-xl
-            block
-            min-h-screen
-          "
+          class="bg-ob-deep-800 px-14 py-16 rounded-2xl shadow-xl block min-h-screen"
         >
           <ob-skeleton
             tag="div"
@@ -80,6 +73,7 @@ import {
 import { useI18n } from 'vue-i18n'
 import { Sidebar, Toc, Profile } from '@/components/Sidebar'
 import { useCommonStore } from '@/stores/common'
+// import { useAppStore } from '@/stores/app'
 
 export default defineComponent({
   name: 'ObPageContainer',
@@ -101,6 +95,7 @@ export default defineComponent({
     const { t } = useI18n()
     const post = toRefs(props).post
     const title = toRefs(props).title
+    // const appStore = useAppStore()
 
     watch(
       () => post.value.covers,
@@ -123,6 +118,15 @@ export default defineComponent({
         if (title.value !== '') return title.value
         return post.value.title
       }),
+      // editLink: computed(() => {
+      //   return 'bla bla bla'
+      //   // if (!appStore.themeConfig.theme.postEdit.enable) return ''
+      //   // return `<a href="${
+      //   //   appStore.themeConfig.theme.postEdit.url + post.value.link
+      //   // } class="post-edit-link" title="Edit ${
+      //   //   post.value.title
+      //   // }" target="_blank"><i class="fa fa-pen-nib"></i></a>`
+      // }),
       t
     }
   }
@@ -141,4 +145,24 @@ export default defineComponent({
     @apply text-white stroke-current flex flex-row items-center pr-4;
   }
 }
+// .post-edit-link {
+//   border-bottom: 0;
+//   color: #bbb;
+//   display: inline-block;
+//   float: right;
+//   font-size: 1.25em;
+//   margin-left: -1.2em;
+//   transition: color 0.2s ease-in;
+//   // +mobile-small() {
+//   //   margin-left: initial;
+//   // }
+
+//   // &:hover {
+//   //   color: $sidebar-highlight;
+//   // }
+// }
+
+// if (hexo-config('post_edit.enable')) {
+
+// }
 </style>

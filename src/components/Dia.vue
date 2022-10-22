@@ -6,7 +6,13 @@
           <div id="Aurora-Dia--tips" class="Aurora-Dia--tips">早上好呀～</div>
         </div>
         <div id="Aurora-Dia" class="Aurora-Dia">
-          <div id="Aurora-Dia--eyes" class="Aurora-Dia--eyes">
+          <div
+            id="Aurora-Dia--eyes"
+            class="Aurora-Dia--eyes"
+            v-bind:class="{
+              'Aurora-Dia--eyes-dark': isDark
+            }"
+          >
             <div id="Aurora-Dia--left-eye" class="Aurora-Dia--eye left"></div>
             <div id="Aurora-Dia--right-eye" class="Aurora-Dia--eye right"></div>
           </div>
@@ -65,6 +71,7 @@ export default defineComponent({
           --aurora-dia--platform-light: ${appStore.themeConfig.theme.gradient.color_3};
         `
       }),
+      isDark: computed(() => appStore.theme === 'theme-dark'),
       showDia
     }
   }
@@ -148,10 +155,15 @@ export default defineComponent({
   width: var(--auora-dia--eye-width);
   height: var(--auora-dia--eye-height);
   border-radius: 15px;
-  background-color: #fff;
+  background-color: #000418;
   box-shadow: 0 0 7px rgba(255, 255, 255, 0.5);
   animation: blink 5s linear infinite;
 }
+
+.Aurora-Dia--eyes-dark > .Aurora-Dia--eye {
+  background-color: #86dc3d;
+}
+
 .Aurora-Dia--eyes > .Aurora-Dia--eye.left {
   left: 25%;
 }

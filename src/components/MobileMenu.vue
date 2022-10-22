@@ -42,15 +42,7 @@
     </ul>
   </div>
   <ul
-    class="
-      flex flex-col
-      justify-center
-      items-center
-      mt-8
-      w-full
-      list-none
-      text-ob-bright
-    "
+    class="flex flex-col justify-center items-center mt-8 w-full list-none text-ob-bright"
   >
     <li class="pb-2 cursor-pointer" v-for="route in routes" :key="route.path">
       <div
@@ -75,19 +67,7 @@
       <Dropdown
         @command="pushPage"
         v-else
-        class="
-          flex flex-col
-          justify-center
-          items-center
-          nav-link
-          text-sm
-          block
-          px-1.5
-          py-0.5
-          rounded-md
-          relative
-          uppercase
-        "
+        class="flex flex-col justify-center items-center nav-link text-sm block px-1.5 py-0.5 rounded-md relative uppercase"
       >
         <span
           class="relative z-50"

@@ -187,6 +187,10 @@ interface ObTheme {
    * */
   dark_mode: boolean | string
   profile_shape: string
+  postEdit: {
+    enable: boolean
+    url: string
+  }
   /**
    * Theme main set of gradient colors
    *
@@ -212,6 +216,10 @@ export class Theme implements ObTheme {
   dark_mode = 'auto'
   profile_shape = 'diamond'
   feature = true
+  postEdit = {
+    enable: true,
+    url: 'https://github.com/adminy/adminy.github.io/main/source/_posts'
+  }
   gradient = {
     color_1: '#24c6dc',
     color_2: '#5433ff',

@@ -70,5 +70,18 @@
     "empty-tag": "目前没有标签",
     "pinned": "置顶",
     "featured": "推荐"
+  },
+  "post": {
+    "posted": "Posted on",
+    "edited": "Edited on",
+    "created": "Created",
+    "modified": "Modified",
+    "edit": "Edit this post",
+    "in": "In",
+    "read_more": "Read more",
+    "untitled": "Untitled",
+    "sticky": "Sticky",
+    "views": "Views",
+    "related_posts": "Related Posts"
   }
 }

@@ -115,7 +115,7 @@ export const useAppStore = defineStore({
     changeLocale(locale: string) {
       Cookies.set('locale', locale)
       this.locale = locale
-      i18n.global.locale = locale
+      // i18n.global.locale = locale
     },
     /**
      * Setting the default locale of the app base on _config

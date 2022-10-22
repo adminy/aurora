@@ -14,13 +14,6 @@ hexo.on('generateAfter', function () {
 
 hexo.on('exit', function () {
   console.log(
-    chalk.green('INFO ') +
-      chalk.magenta('Thanks for using') +
-      chalk.cyan.bold(' Aurora v' + pack.version)
-  )
-  console.log(
-    chalk.green('INFO ') +
-      chalk.magenta('Check out the repo at:') +
-      chalk.cyan.underline(' https://github.com/auroral-ui/hexo-theme-aurora')
+    chalk.green('INFO ') + chalk.cyan.bold('Using Aurora v' + pack.version)
   )
 })

@@ -101,11 +101,24 @@
                 {{ post.count_time.symbolsCount }}
               </span>
             </span>
+            <span>
+              <a :href="editUrl" target="_blank">
+                <span class="pl-2 opacity-70">
+                  <i class="fa fa-pen-nib"></i>
+                </span>
+              </a>
+            </span>
           </div>
 
           <div v-else class="post-stats">
             <span>
               <svg-icon icon-class="clock" />
+              <span class="pl-2">
+                <ob-skeleton width="40px" height="16px" />
+              </span>
+            </span>
+            <span>
+              <svg-icon icon-class="text" />
               <span class="pl-2">
                 <ob-skeleton width="40px" height="16px" />
               </span>
@@ -131,15 +144,7 @@
         </template>
         <div
           v-else
-          class="
-            bg-ob-deep-800
-            px-14
-            py-16
-            rounded-2xl
-            shadow-xl
-            block
-            min-h-screen
-          "
+          class="bg-ob-deep-800 px-14 py-16 rounded-2xl shadow-xl block min-h-screen"
         >
           <ob-skeleton
             tag="div"
@@ -291,6 +296,9 @@ export default defineComponent({
 
     return {
       isMobile: computed(() => commonStore.isMobile),
+      editUrl: computed(
+        () => appStore.themeConfig.theme.postEdit.url + post.value.slug + '.md'
+      ),
       handleAuthorClick,
       loading,
       post,
