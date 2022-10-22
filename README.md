@@ -29,6 +29,12 @@ Aurora is a next generation theme using Aurora colours and UI elements. It give 
 
 > This theme can be installed by using NPM or Yarn since version 1.1.0+, please check the [usage document](https://aurora.tridiamond.tech) for more details.
 
+---
+> Installing:
+- Clone this repository into your `themes` folder or `yarn add git@github.com:adminy/hexo-theme-aurora.git`
+- copy `_config.aurora.yml` from `themes/_config.yml` or `node_modules/hexo-theme-aurora/_config.yml`
+- change your default `theme:` in `_config.yml` to `hexo-theme-aurora` or `aurora`, not sure which
+
 <br/>
 
 ![](https://img-blog.csdnimg.cn/202103280030531.png)

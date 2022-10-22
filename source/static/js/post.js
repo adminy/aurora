@@ -93,7 +93,7 @@ __webpack_require__.r(__webpack_exports__);
     });
     return {
       isMobile: Object(vue__WEBPACK_IMPORTED_MODULE_3__["computed"])(() => commonStore.isMobile),
-      editUrl: Object(vue__WEBPACK_IMPORTED_MODULE_3__["computed"])(() => appStore.themeConfig.theme.postEdit.url + '/' + post.value.slug),
+      editUrl: Object(vue__WEBPACK_IMPORTED_MODULE_3__["computed"])(() => appStore.themeConfig.theme.postEdit.url + post.value.slug + '.md'),
       handleAuthorClick,
       loading,
       post,
