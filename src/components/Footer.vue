@@ -21,7 +21,7 @@
                 </b>
               </a>
               & Themed by
-              <a href="https://github.com/obsidianext/hexo-theme-obsidianext">
+              <a href="https://github.com/adminy/aurora">
                 <b class="font-extrabold border-b-2 border-ob hover:text-ob">
                   Aurora v{{ themeConfig.version }}
                 </b>

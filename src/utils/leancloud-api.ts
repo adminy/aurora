@@ -4,7 +4,6 @@
  * - Fetch your blog's latest comments.
  * - Fetch your blog's post views.
  * - Fetch Gravatar.
- * @author TriDiamond <code.tridiamond@gmail.com>
  */
 
 // import request from '@/utils/external-request'

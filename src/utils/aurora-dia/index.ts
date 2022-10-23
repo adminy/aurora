@@ -1,7 +1,5 @@
 /*
  * Aurora Customized live2d Widget
- *
- * @author Benny Guo <code.tridiamond@gmail.com>
  * @live2d by StevenJoeZhang <https://github.com/stevenjoezhang/live2d-widget>
  */
 

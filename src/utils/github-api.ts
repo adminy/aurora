@@ -1,8 +1,3 @@
-/**
- * Github Recent Comment
- * @author TriDiamond <code.tridiamond@gmail.com>
- */
-
 import request from '@/utils/external-request'
 import { AxiosResponse } from 'axios'
 import { formatTime, filterHTMLContent } from '@/utils'
