@@ -89,7 +89,7 @@ export class ThemeMenu implements ObMenu {
     const extract: GeneralOptions = {
       About: {
         name: 'About',
-        path: '/about',
+        path: '/page/about/',
         i18n: {
           cn: '关于',
           en: 'About'
@@ -218,7 +218,7 @@ export class Theme implements ObTheme {
   feature = true
   postEdit = {
     enable: true,
-    url: 'https://github.com/adminy/adminy.github.io/main/source/_posts'
+    url: 'https://github.com/adminy/adminy.github.io/tree/master/source/_posts/'
   }
   gradient = {
     color_1: '#24c6dc',

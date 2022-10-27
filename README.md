@@ -87,3 +87,12 @@ This can run with the latest node.js version, with some tolerable warnings and t
 rm -rf node_modules yarn.lock
 yarn install -std=c++17 --ignore-engines
 ```
+
+<br><br>
+
+### Update packages
+```bash
+yarn add axios core-js js-cookie normalize.css nprogress pinia sass truncate-html vue vue-class-component vue-i18n vue-router  vue3-click-away vue3-lazy vue3-scroll-spy  -std=c++17 --ignore-engines
+yarn add @tailwindcss/postcss7-compat @types/jest @types/js-cookie @types/node @types/nprogress @typescript-eslint/eslint-plugin @typescript-eslint/parser @vue/cli-plugin-babel @vue/cli-plugin-eslint @vue/cli-plugin-router @vue/cli-plugin-typescript @vue/cli-plugin-unit-jest @vue/cli-service @vue/compiler-sfc @vue/eslint-config-prettier @vue/eslint-config-typescript @vue/test-utils autoprefixer eslint eslint-plugin-prettier eslint-plugin-vue hexo-pagination hexo-util js-yaml postcss prettier runjs sass-loader script-ext-html-webpack-plugin svg-sprite-loader svgo tailwindcss typescript vue-jest  -std=c++17 --ignore-engines
+
+```

@@ -1,17 +1,11 @@
 import { defineStore } from 'pinia'
-import { routersMap } from '@/router'
+import router from '@/router'
 
 function routes(): { path: string; name: string }[] {
-  return routersMap
-    .filter((route) => {
-      return !route.hidden
-    })
-    .map((route) => {
-      return {
-        path: route.path,
-        name: route.name ? route.name : ''
-      }
-    })
+  return router
+    .getRoutes()
+    .filter(route => !route.props.hidden)
+    .map(route => ({ path: route.path, name: route.name?.toString() || '' }))
 }
 
 export const useRoutersStore = defineStore({
@@ -23,7 +17,7 @@ export const useRoutersStore = defineStore({
   }),
   getters: {
     getRouterMap() {
-      return this.routes
+      return routes()
     }
   },
   actions: {}

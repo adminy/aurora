@@ -15,7 +15,7 @@ const routes = [
     hidden: true
   },
   {
-    path: '/about',
+    path: '/page/about/',
     name: 'about',
     component: () =>
       import(/* webpackChunkName: "about" */ '../views/About.vue')
