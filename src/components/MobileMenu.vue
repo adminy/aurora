@@ -132,7 +132,7 @@ export default defineComponent({
     const authorData = ref(new AuthorPosts())
 
     const fetchAuthor = async () => {
-      let author = appStore.themeConfig.site.author.toLocaleLowerCase()
+      const author = appStore.themeConfig.site.author.toLocaleLowerCase()
       author.replace(/[\s]+/g, '-')
       await authorStore.fetchAuthorData(author).then(data => {
         authorData.value = data

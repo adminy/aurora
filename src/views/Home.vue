@@ -225,7 +225,7 @@ export default defineComponent({
         return categoryStore.categories
       }),
       mainAuthor: computed(() => {
-        let author = appStore.themeConfig.site.author.toLocaleLowerCase()
+        const author = appStore.themeConfig.site.author.toLocaleLowerCase()
         return author.replace(/[\s]+/g, '-')
       }),
       recentCommentEnable: computed(() => {

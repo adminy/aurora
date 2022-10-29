@@ -92,7 +92,7 @@ export default defineComponent({
   setup() {
     const appStore = useAppStore()
     const { t } = useI18n()
-    let recentComments = ref([])
+    const recentComments = ref([])
 
     const initRecentComment = () => {
       if (!appStore.configReady) return

@@ -20,12 +20,13 @@
  * using these global variables.
  */
 declare const Gitalk: any
-declare const Valine: any
+// declare const Valine: any
 
 import { useAppStore } from '@/stores/app'
 import { defineComponent, onMounted, toRefs, watch } from 'vue'
 import { SubTitle } from '@/components/Title'
 import { usePostStore } from '@/stores/post'
+const Valine = require('valine')
 
 export default defineComponent({
   name: 'ObComment',

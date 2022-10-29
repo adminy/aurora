@@ -6,6 +6,7 @@ node_modules
 coverage
 /dist
 
+source/static
 
 # local env files
 .env.local

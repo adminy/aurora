@@ -50,7 +50,7 @@ export default defineComponent({
     }
   },
   setup() {
-    let active = ref(false),
+    const active = ref(false),
       position = ref(''),
       width = ref(),
       height = ref(),

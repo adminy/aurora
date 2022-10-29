@@ -17,7 +17,7 @@ export default defineComponent({
   },
   components: { HorizontalArticle },
   setup(props) {
-    let featurePost = toRefs(props).data
+    const featurePost = toRefs(props).data
 
     return {
       featurePost

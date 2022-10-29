@@ -94,7 +94,7 @@ export default defineComponent({
       page: 1
     })
     const queryKey = 'ob-query-key'
-    let querySlug = ref()
+    const querySlug = ref()
 
     const initPage = () => {
       const path = route.path

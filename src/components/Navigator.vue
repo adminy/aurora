@@ -123,10 +123,10 @@ export default defineComponent({
     const progress = ref(0)
     const scrolling = ref(false)
 
-    let time = ref(0)
+    const time = ref(0)
     let scrollingHandler = 0
     let menuReopenHandler = 0
-    let needReopen = ref(false)
+    const needReopen = ref(false)
 
     const scrollHandler = () => {
       clearTimeout(scrollingHandler)
