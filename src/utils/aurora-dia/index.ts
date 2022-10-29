@@ -384,26 +384,26 @@ class AuroraBotSoftware {
   }
 
   showQuote() {
-    if (this.config.locale === 'cn') {
-      this.getHitokoto()
-    } else {
-      this.getTheySaidSo()
-    }
+    // if (this.config.locale === 'cn') {
+    //   this.getHitokoto()
+    // } else {
+    //   this.getTheySaidSo()
+    // }
   }
 
-  getHitokoto() {
-    fetch('https://v1.hitokoto.cn')
-      .then(response => response.json())
-      .then(result => {
-        this.showMessage(result.hitokoto, 6000, 9)
-      })
-  }
+  // getHitokoto() {
+  //   fetch('https://v1.hitokoto.cn')
+  //     .then(response => response.json())
+  //     .then(result => {
+  //       this.showMessage(result.hitokoto, 6000, 9)
+  //     })
+  // }
 
-  getTheySaidSo() {
-    fetch('https://quotes.rest/qod?language=en')
-      .then(response => response.json())
-      .then(result => {
-        this.showMessage(result.contents.quotes[0].quote, 6000, 9)
-      })
-  }
+  // getTheySaidSo() {
+  //   fetch('https://quotes.rest/qod?language=en')
+  //     .then(response => response.json())
+  //     .then(result => {
+  //       this.showMessage(result.contents.quotes[0].quote, 6000, 9)
+  //     })
+  // }
 }
