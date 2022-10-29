@@ -32,7 +32,6 @@
     "pinia": "^2.0.23",
     "sass": "^1.55.0",
     "truncate-html": "^1.0.4",
-    "valine": "^1.5.1",
     "vue": "^3.2.41",
     "vue-class-component": "^7.2.6",
     "vue-i18n": "^9.3.0-beta.6",
