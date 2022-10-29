@@ -10,7 +10,6 @@
       :category="giscusProps.category"
       :categoryId="giscusProps.categoryId"
       :mapping="giscusProps.mapping"
-      :term="giscusProps.term"
       :reactionsEnabled="giscusProps.reactionsEnabled"
       :emitMetadata="giscusProps.emitMetadata"
       v-bind:theme="theme"

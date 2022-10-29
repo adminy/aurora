@@ -468,7 +468,6 @@ export class Plugins implements PluginsData {
     category: '',
     categoryId: '',
     mapping: 'pathname',
-    term: 'Leave your thoughts behind~',
     reactionsEnabled: 1,
     emitMetadata: 1,
     inputPosition: 'top',
