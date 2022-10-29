@@ -27,26 +27,47 @@
         </template>
       </TagList>
     </div>
+    <Comment
+      :title="pageData.title"
+      :body="pageData.text"
+      :uid="pageData.uid"
+    />
   </div>
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, onBeforeMount, onUnmounted } from 'vue'
+import { computed, defineComponent, onBeforeMount, onUnmounted, ref } from 'vue'
 import Breadcrumbs from '@/components/Breadcrumbs.vue'
 import { useI18n } from 'vue-i18n'
 import { useTagStore } from '@/stores/tag'
 import { TagList, TagItem } from '@/components/Tag'
 import { useCommonStore } from '@/stores/common'
+import Comment from '@/components/Comment.vue'
+import { Page } from '@/models/Article.class'
+import { useRoute } from 'vue-router'
+import { useArticleStore } from '@/stores/article'
+import { useAppStore } from '@/stores/app'
 
 export default defineComponent({
   name: 'Tag',
-  components: { Breadcrumbs, TagList, TagItem },
+  components: { Breadcrumbs, TagList, TagItem, Comment },
   setup() {
     const commonStore = useCommonStore()
     const { t } = useI18n()
     const tagStore = useTagStore()
+    const appStore = useAppStore()
+    const pageData = ref(new Page())
+    const route = useRoute()
+    const articleStore = useArticleStore()
+
+    const fetchArticle = () => {
+      articleStore.fetchArticle(String(route.params.slug)).then(response => {
+        pageData.value = response
+      })
+    }
 
     const fetchData = async () => {
+      fetchArticle()
       tagStore.fetchAllTags()
       commonStore.setHeaderImage(`${require('@/assets/default-cover.jpg')}`)
     }
@@ -61,6 +82,9 @@ export default defineComponent({
         if (tagStore.isLoaded && tagStore.tags.length === 0) return null
         return tagStore.tags
       }),
+      pageTitle: computed(() => ''),
+      blogAuthor: computed(() => appStore.hexoConfig.site.author),
+      pageData,
       t
     }
   }

@@ -2,13 +2,11 @@
   <div>
     <Breadcrumbs :current="pageTitle" />
     <PageContainer :post="pageData" :title="pageTitle">
-      <div id="comments">
-        <Comment
-          :title="pageData.title"
-          :body="pageData.text"
-          :uid="pageData.uid"
-        />
-      </div>
+      <Comment
+        :title="pageData.title"
+        :body="pageData.text"
+        :uid="pageData.uid"
+      />
     </PageContainer>
   </div>
 </template>
@@ -75,5 +73,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<style lang="scss" scoped></style>

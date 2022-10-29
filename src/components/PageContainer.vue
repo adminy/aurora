@@ -50,6 +50,11 @@
           />
         </div>
         <slot />
+        <Comment
+          :title="pageData.title"
+          :body="pageData.text"
+          :uid="pageData.uid"
+        />
       </div>
       <div class="col-span-1">
         <Sidebar>
@@ -67,17 +72,24 @@ import {
   defineComponent,
   onMounted,
   onUnmounted,
+  onBeforeMount,
   toRefs,
-  watch
+  watch,
+  ref
 } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { Sidebar, Toc, Profile } from '@/components/Sidebar'
 import { useCommonStore } from '@/stores/common'
 import { useAppStore } from '@/stores/app'
+import Comment from '@/components/Comment.vue'
+import { Page } from '@/models/Article.class'
+import { useRoute } from 'vue-router'
+import { useArticleStore } from '@/stores/article'
+import { useMetaStore } from '@/stores/meta'
 
 export default defineComponent({
   name: 'ObPageContainer',
-  components: { Sidebar, Toc, Profile },
+  components: { Sidebar, Toc, Profile, Comment },
   props: {
     post: {
       type: Object,
@@ -96,6 +108,30 @@ export default defineComponent({
     const post = toRefs(props).post
     const title = toRefs(props).title
     const appStore = useAppStore()
+    const pageData = ref(new Page())
+    const route = useRoute()
+    const articleStore = useArticleStore()
+    const pageTitle = ref()
+    const metaStore = useMetaStore()
+
+    const fetchArticle = () => {
+      articleStore.fetchArticle(String(route.params.slug)).then(response => {
+        pageData.value = response
+
+        pageTitle.value = pageData.value.title
+
+        updateTitle(appStore.locale)
+      })
+    }
+
+    const updateTitle = (locale: string | undefined) => {
+      const currentLocale = locale === 'cn' ? 'cn' : 'en'
+      const routeInfo =
+        appStore.themeConfig.menu.menus[String(route.params.slug)]
+      pageTitle.value =
+        (routeInfo.i18n && routeInfo.i18n[currentLocale]) || routeInfo.name
+      metaStore.setTitle(pageTitle.value)
+    }
 
     watch(
       () => post.value.covers,
@@ -113,12 +149,15 @@ export default defineComponent({
       commonStore.resetHeaderImage()
     })
 
+    onBeforeMount(fetchArticle)
+
     return {
       pageTitle: computed(() => {
         if (title.value !== '') return title.value
         return post.value.title
       }),
       blogAuthor: computed(() => appStore.hexoConfig.site.author),
+      pageData,
       // editLink: computed(() => {
       //   return 'bla bla bla'
       //   // if (!appStore.themeConfig.theme.postEdit.enable) return ''
