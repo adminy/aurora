@@ -19,6 +19,5 @@ plugins:
   valine:
     - <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
     - <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-
-
-    
+  giscus:
+    - <script src="https://giscus.app/client.js" data-repo="adminy/adminy.github.io" data-repo-id="MDEwOlJlcG9zaXRvcnk5ODA4NzE5NA==" data-category="General" data-category-id="DIC_kwDOBdixGs4CSQhK" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="1" data-input-position="top" data-theme="dark" data-lang="en" data-loading="lazy" crossorigin="anonymous" async></script>

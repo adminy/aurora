@@ -5,6 +5,9 @@
     <SubTitle :title="'titles.comment'" />
     <div id="gitalk-container"></div>
     <div id="vcomments"></div>
+    <div class="giscus">
+      <div class="giscus-frame"></div>
+    </div>
   </div>
 </template>
 
@@ -20,13 +23,13 @@
  * using these global variables.
  */
 declare const Gitalk: any
-// declare const Valine: any
+declare const Valine: any
 
 import { useAppStore } from '@/stores/app'
 import { defineComponent, onMounted, toRefs, watch } from 'vue'
 import { SubTitle } from '@/components/Title'
 import { usePostStore } from '@/stores/post'
-const Valine = require('valine')
+// const Valine = require('valine')
 
 export default defineComponent({
   name: 'ObComment',

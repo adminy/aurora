@@ -79,6 +79,9 @@ Aurora is a next generation theme using Aurora colours and UI elements. It give 
 
 - Related posts - _Show a list of the related posts at the end of an article. _
 
+- https://utteranc.es/
+
+
 <br><br>
 
 ## ⚠️ Fix node errors
