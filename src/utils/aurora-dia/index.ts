@@ -191,7 +191,7 @@ class AuroraBotSoftware {
     const devtools = () => {
       console.log('opened devtools')
     }
-    console.log('%c', devtools)
+    // console.log('%c', devtools)
     devtools.toString = () => {
       this.showMessage(this.botTips.console, 6000, 9)
     }

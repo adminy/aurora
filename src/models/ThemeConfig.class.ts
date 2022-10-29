@@ -433,33 +433,6 @@ export class SiteMeta {
 type MetaAttributes = 'nick' | 'mail' | 'link'
 
 interface PluginsData {
-  gitalk: {
-    enable: boolean
-    autoExpand: boolean
-    clientID: string
-    clientSecret: string
-    repo: string
-    owner: string
-    admin: Array<string>
-    id: string
-    language: string
-    distractionFreeMode: boolean
-    recentComment: boolean
-    proxy: string
-  }
-
-  valine: {
-    enable: boolean
-    app_id: string
-    app_key: string
-    avatar: string
-    placeholder: string
-    visitor: boolean
-    lang: string
-    meta: MetaAttributes[]
-    admin: string
-    recentComment: boolean
-  }
   recent_comments: boolean
   busuanzi: {
     enable: boolean
@@ -488,33 +461,21 @@ interface PluginsData {
 }
 
 export class Plugins implements PluginsData {
-  gitalk = {
+  giscus = {
     enable: false,
-    autoExpand: true,
-    clientID: '',
-    clientSecret: '',
-    repo: 'blog-comments',
-    owner: 'adminy',
-    admin: ['adminy'],
-    id: 'location.pathname',
-    language: 'en',
-    distractionFreeMode: false,
-    recentComment: false,
-    proxy: ''
-  }
-  valine = {
-    enable: false,
-    app_id: '',
-    app_key: '',
-    avatar: 'mp',
-    placeholder: 'Leave your thoughts behind~',
-    visitor: true,
-    lang: '',
-    meta: [],
-    requiredFields: [],
-    avatarForce: false,
-    admin: '',
-    recentComment: false
+    repo: '',
+    repoId: '',
+    category: '',
+    categoryId: '',
+    mapping: 'pathname',
+    term: 'Leave your thoughts behind~',
+    reactionsEnabled: 1,
+    emitMetadata: 1,
+    inputPosition: 'top',
+    theme: 'dark',
+    lang: 'en',
+    crossorigin: 'anonymous',
+    loading: 'lazy'
   }
   recent_comments = false
   busuanzi = {

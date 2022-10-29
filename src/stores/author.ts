@@ -11,10 +11,8 @@ export const useAuthorStore = defineStore({
   actions: {
     /** Fetching author's info */
     async fetchAuthorData(slug: string): Promise<AuthorPosts> {
-      const { data } = await fetchAuthorPost(slug)
-      return new Promise(resolve => {
-        resolve(new AuthorPosts(data))
-      })
+    const { data } = await fetchAuthorPost(slug)
+    return new AuthorPosts(data)
     }
   }
 })

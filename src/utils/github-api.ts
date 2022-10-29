@@ -238,7 +238,7 @@ export class GithubComment {
     const hasFirstQuoteMark = content.indexOf('>') > -1
 
     /**
-     * If the comment is posted on gitalk, the return
+     * If the comment is posted on giscus, the return
      * symbol would be '\n\n' however, if the comment is
      * posted on github, the quote will finish with '\r\n\r\n'.
      * Therefore here need to progress 2 different cases.
@@ -247,14 +247,14 @@ export class GithubComment {
     let splitArr = []
 
     /**
-     * Case 1: Posted on gitalk
+     * Case 1: Posted on giscus
      * Split content string by '\n\n'
      */
     const splitByNewline = '\n\n'
     splitArr = content.split(splitByNewline)
 
     /**
-     * Case 2: Posted on gitalk
+     * Case 2: Posted on giscus
      * If split array has less than 2
      * means failed to split the quote and real comment
      * therefore need to split again with '\r\n\r\n' instead.

@@ -19,8 +19,8 @@ site:
 #! ---------------------------------------------------------------
 authors:
   ##! example
-  # adminy:
-  #   name: Marin Bivol
+  adminy:
+    name: Marin Bivol
     avatar: https://avatars.githubusercontent.com/u/22717869?v=4
     link: https://github.com/adminy
     description: "Beat me in simplicity and I'll tell you all the secrets!"
@@ -41,7 +41,7 @@ menu:
 #! @docs https://aurora.tridiamond.tech/guide/theme.html
 #! ---------------------------------------------------------------
 theme:
-  dark_mode: false
+  dark_mode: true
   profile_shape: rounded # support `circle`, `diamond`, `rounded`
   feature: true
   gradient:
@@ -109,36 +109,29 @@ site_meta:
 #! @docs https://aurora.tridiamond.tech/guide/plugins.html
 #! ---------------------------------------------------------------
 
-# For local development only!
-gitalk:
-  enable: false
-#   autoExpand: true
-#   clientID: ''
-#   clientSecret: ''
-#   repo: 'dev-blog-comments'
-#   owner: 'adminy'
-#   admin: ['adminy']
-#   id: uid
-#   language: en
-#   distractionFreeMode: true
-#   recentComment: true
-#   proxy: ''
-
-# Valine comment plugin (recommended!)
-# see https://valine.js.org/quickstart.html
-valine:
-  enable: false
-#   app_id:
-#   app_key:
-#   avatar: ''
-#   placeholder: Leave your thoughts behind~
-#   visitor: true
-#   lang: en
-#   avatarForce: false
-#   meta: ['nick', 'mail']
-#   requiredFields: []
-#   admin: 'adminy'
-#   recentComment: true
+giscus:
+  enable: true
+  repo: 'adminy/adminy.github.io'
+  repoId: 'MDEwOlJlcG9zaXRvcnk5ODA4NzE5NA=='
+  category: General'
+  categoryId: 'DIC_kwDOBdixGs4CSQhK'
+  # Available values: pathname | url | title | og:title
+  mapping: pathname
+  term: 'Say something nice ...'
+  # Available values: 0 | 1 
+  reactionsEnabled: 1
+   # Available values: 0 | 1 
+  emitMetadata: 1
+  # Available values: light | dark | dark_high_contrast | transparent_dark | preferred-color-scheme
+  # theme: dark
+  # Available values: en | zh-C
+  lang: en
+  # Available value: anonymous
+  crossorigin: anonymous
+  # Place the comment box above the comments
+  inputPosition: top
+  # Load the comments lazily
+  loading: lazy
 
 # Enable Busuanzi statistic plugin
 # see http://ibruce.info/2015/04/04/busuanzi/
@@ -164,6 +157,7 @@ valine:
 #! ---------------------------------------------------------------
 injects:
   scripts:
+    # - <script src="https://giscus.app/client.js" data-repo="adminy/adminy.github.io" data-repo-id="MDEwOlJlcG9zaXRvcnk5ODA4NzE5NA==" data-category="General" data-category-id="DIC_kwDOBdixGs4CSQhK" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="1" data-input-position="top" data-theme="dark" data-lang="en" data-loading="lazy" crossorigin="anonymous" async></script>
   css:
 
 
@@ -340,15 +334,8 @@ aurora_bot:
           - Enjoy reading:<span>「{text}」</span>.
           - That's a good pick, enjoy time reading this article.
           - Hope you can learn something from:<span>「{text}」</span>.
-      # Click on Gitalk comment
-      - selector: '.gt-header-textarea'
-        text:
-          - Wanna write something?
-          - Be sure write your comment carefully meow~
-          - Anything you want to say to the author?
-          - If you think the article is good, leave a message for the author.
-      # Click on Valine comment
-      - selector: '.veditor'
+      # Click on comments
+      - selector: '#comments'
         text:
           - Wanna write something?
           - Be sure write your comment carefully meow~

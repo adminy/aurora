@@ -49,18 +49,6 @@ module.exports = function (hexo) {
     for (let cs of locales.css) {
       hexo.extend.injector.register('head_end', cs)
     }
-
-    if (themeConfig.gitalk.enable) {
-      for (let cdn of locales.plugins.gitalk) {
-        hexo.extend.injector.register('head_ned', cdn)
-      }
-    }
-
-    if (themeConfig.valine.enable) {
-      for (let cdn of locales.plugins.valine) {
-        hexo.extend.injector.register('head_ned', cdn)
-      }
-    }
   }
 
   // SEO injections

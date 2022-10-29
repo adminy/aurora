@@ -229,13 +229,14 @@ export default defineComponent({
         return author.replace(/[\s]+/g, '-')
       }),
       recentCommentEnable: computed(() => {
-        return (
-          (appStore.themeConfig.plugins.gitalk.enable &&
-            appStore.themeConfig.plugins.gitalk.recentComment) ||
-          (!appStore.themeConfig.plugins.gitalk.enable &&
-            appStore.themeConfig.plugins.valine.enable &&
-            appStore.themeConfig.plugins.valine.recentComment)
-        )
+        return false
+        // return (
+        //   (appStore.themeConfig.plugins.gitalk.enable &&
+        //     appStore.themeConfig.plugins.gitalk.recentComment) ||
+        //   (!appStore.themeConfig.plugins.gitalk.enable &&
+        //     appStore.themeConfig.plugins.valine.enable &&
+        //     appStore.themeConfig.plugins.valine.recentComment)
+        // )
       }),
       expanderClass,
       tabClass,

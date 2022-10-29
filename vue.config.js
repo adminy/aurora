@@ -64,6 +64,30 @@ module.exports = {
     config.plugins.delete('preload') // TODO: need test
     config.plugins.delete('prefetch') // TODO: need test
 
+    // set environment variables
+    config.plugin('define').tap(definitions => {
+      Object.assign(definitions[0], {
+        // ... rest of your injected vars here
+        // get rid of vue-i18n warning
+        __VUE_I18N_FULL_INSTALL__: JSON.stringify(true),
+        __INTLIFY_PROD_DEVTOOLS__: JSON.stringify(false),
+        __VUE_I18N_LEGACY_API__: JSON.stringify(false)
+      })
+
+      return definitions
+    })
+
+    config.module
+      .rule('vue')
+      .use('vue-loader')
+      .tap(options => ({
+        ...options,
+        compilerOptions: {
+          // treat any tag that starts with ion- as custom elements
+          isCustomElement: tag => ['giscus-widget'].includes(tag)
+        }
+      }))
+
     // set svg-sprite-loader
     config.module.rule('svg').exclude.add(resolve('src/icons')).end()
     config.module

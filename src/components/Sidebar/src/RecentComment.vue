@@ -96,37 +96,37 @@ export default defineComponent({
 
     const initRecentComment = () => {
       if (!appStore.configReady) return
-      if (
-        appStore.themeConfig.plugins.gitalk.enable &&
-        appStore.themeConfig.plugins.gitalk.recentComment
-      ) {
-        const githubComments = new GithubComments({
-          repo: appStore.themeConfig.plugins.gitalk.repo,
-          clientId: appStore.themeConfig.plugins.gitalk.clientID,
-          clientSecret: appStore.themeConfig.plugins.gitalk.clientSecret,
-          owner: appStore.themeConfig.plugins.gitalk.owner,
-          admin: appStore.themeConfig.plugins.gitalk.admin[0]
-        })
+      // if (
+      //   appStore.themeConfig.plugins.gitalk.enable &&
+      //   appStore.themeConfig.plugins.gitalk.recentComment
+      // ) {
+      //   const githubComments = new GithubComments({
+      //     repo: appStore.themeConfig.plugins.gitalk.repo,
+      //     clientId: appStore.themeConfig.plugins.gitalk.clientID,
+      //     clientSecret: appStore.themeConfig.plugins.gitalk.clientSecret,
+      //     owner: appStore.themeConfig.plugins.gitalk.owner,
+      //     admin: appStore.themeConfig.plugins.gitalk.admin[0]
+      //   })
 
-        githubComments.getComments().then(response => {
-          recentComments.value = response
-        })
-      } else if (
-        appStore.themeConfig.plugins.valine.enable &&
-        appStore.themeConfig.plugins.valine.recentComment
-      ) {
-        const leadCloudComments = new LeanCloudComments({
-          appId: appStore.themeConfig.plugins.valine.app_id,
-          appKey: appStore.themeConfig.plugins.valine.app_key,
-          avatar: appStore.themeConfig.plugins.valine.avatar,
-          admin: appStore.themeConfig.plugins.valine.admin,
-          lang: appStore.themeConfig.plugins.valine.lang
-        })
+      //   githubComments.getComments().then(response => {
+      //     recentComments.value = response
+      //   })
+      // } else if (
+      //   appStore.themeConfig.plugins.valine.enable &&
+      //   appStore.themeConfig.plugins.valine.recentComment
+      // ) {
+      //   const leadCloudComments = new LeanCloudComments({
+      //     appId: appStore.themeConfig.plugins.valine.app_id,
+      //     appKey: appStore.themeConfig.plugins.valine.app_key,
+      //     avatar: appStore.themeConfig.plugins.valine.avatar,
+      //     admin: appStore.themeConfig.plugins.valine.admin,
+      //     lang: appStore.themeConfig.plugins.valine.lang
+      //   })
 
-        leadCloudComments.getRecentComments(7).then(response => {
-          recentComments.value = response
-        })
-      }
+      //   leadCloudComments.getRecentComments(7).then(response => {
+      //     recentComments.value = response
+      //   })
+      // }
     }
 
     /** Wait for config is ready */
